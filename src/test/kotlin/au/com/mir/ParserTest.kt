@@ -16,22 +16,20 @@ class ParserTest: Spek({
             val s = currentRelativePath.toAbsolutePath().toString()
             val filePath = "$s/src/test/resources/short_sample.csv"
 
-            // When
-            val result = Parser.readFile(filePath)
-
-            // Then
-            assertEquals("10d7ce2f43e35fa57d1bbf8b1e2", result[0].get(0))
-            assertEquals("2014-04-29T13:15:54", result[0].get(1))
-            assertEquals("10.00", result[0].get(2))
-            assertEquals(3, result.size)
-
-
             // WHEN
+            val result = Parser.readFile(filePath)
+            println(result)
 
-            // THEN
+            //   // THEN
+            assertEquals("123", result[0].get(0))
+            assertEquals("2021/04/customer1-12212", result[0].get(1))
+            assertEquals("2021-04-29T13:15:54", result[0].get(2))
+            assertEquals("10.00", result[0].get(3))
+            assertEquals("GST", result[0].get(4))
+            assertEquals(4, result.size)
         }
 
-        it("should throw a ") {
+        it("should throw an Exception") {
             // Given
             val currentRelativePath: Path = Paths.get("")
             val s = currentRelativePath.toAbsolutePath().toString()
