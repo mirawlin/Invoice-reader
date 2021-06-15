@@ -8,7 +8,7 @@ object TransactionIntegrationTest: Spek({
     describe("the main"){
         it("should take a customer and tax type as arguments, calculate the tax and print the results") {
             // GIVEN
-            val input = "GST 123 short_sample.csv"
+            val input = "GST 123 ./src/test/resources/short_sample.csv"
 
             // WHEN
             val result = main(arrayOf(input))

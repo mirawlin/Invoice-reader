@@ -1,14 +1,13 @@
 package au.com.mir
 
-import org.apache.commons.csv.CSVRecord
 import java.math.BigDecimal
 
 object TaxCalculator {
-    fun getInvoiceAmounts(records: List<CSVRecord>, customer: String, taxType: String)
+    fun getInvoiceAmounts(invoice: List<TaxInvoice>, customer: Int, taxType: String)
             : List<BigDecimal> {
-        return records
-            .filter { it.get(0) == customer && it.get(4) == taxType}
-            .map { it.get(3).toBigDecimal() }.toList()
+        return invoice
+            .filter { it.customerId == customer && it.taxType == taxType}
+            .map { it.amount }.toList()
     }
 
     fun calculateTotalTax(amounts: List<BigDecimal>): BigDecimal {
