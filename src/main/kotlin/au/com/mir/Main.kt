@@ -7,9 +7,13 @@ val logger: Logger = Logger.getLogger("main")
 
 fun main(args: Array<String>) {
 
-    val filePath = args[0].split(" ")[2]
+    val getParams = args[0].split(" ")
+    val filePath = getParams[2]
+    val taxType = getParams[0]
+    val customer = getParams[1].toInt()
     println(filePath)
-    val records = Parser.readFile(filePath)
+    TaxEngine.execute(customer, taxType, filePath)
 
     logger.log(Level.INFO, "##### Tax invoices result #####")
+
 }
