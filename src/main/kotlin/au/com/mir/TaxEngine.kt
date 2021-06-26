@@ -6,7 +6,6 @@ object TaxEngine {
 
         val taxInvoice = records.map { TaxInvoice.csvRecordToTaxInvoice(it) }
 
-
         val findRelevantRecords = TaxCalculator.getInvoiceAmounts(taxInvoice, customer, taxType)
         val calculateTax = TaxCalculator.calculateTotalTax(findRelevantRecords)
 

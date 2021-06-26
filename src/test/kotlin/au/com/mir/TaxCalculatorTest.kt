@@ -45,13 +45,13 @@ class TaxCalculatorTest: Spek({
     describe("calculateTotalTax") {
         it("should sum up all the values and calculate the 10% value") {
             // GIVEN
-            val amounts = listOf(BigDecimal.valueOf(10), BigDecimal.valueOf(50))
+            val amounts = listOf(10.00.toBigDecimal(),50.00.toBigDecimal())
 
             // WHEN
             val result = TaxCalculator.calculateTotalTax(amounts)
 
             // THEN
-            assertEquals(BigDecimal.valueOf(6.0), result)
+            assertTrue(BigDecimal.valueOf(6.00).compareTo(result) == 0)
         }
     }
 })
