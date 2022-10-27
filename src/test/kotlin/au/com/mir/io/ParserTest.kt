@@ -1,4 +1,4 @@
-package au.com.mir
+package au.com.mir.io
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.assertThrows
@@ -11,7 +11,6 @@ class ParserTest: Spek({
     describe("readCsvFile") {
         it("should take an input file and read its contents") {
             // GIVEN
-            // Given
             val currentRelativePath: Path = Paths.get("")
             val s = currentRelativePath.toAbsolutePath().toString()
             val filePath = "$s/src/test/resources/short_sample.csv"
@@ -20,7 +19,7 @@ class ParserTest: Spek({
             val result = Parser.readFile(filePath)
             println(result)
 
-            //   // THEN
+            // THEN
             assertEquals("123", result[0].get(0))
             assertEquals("2021/04/customer1-12212", result[0].get(1))
             assertEquals("2021-04-29T13:15:54", result[0].get(2))

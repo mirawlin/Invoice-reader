@@ -1,4 +1,4 @@
-package au.com.mir
+package au.com.mir.model
 
 import org.apache.commons.csv.CSVRecord
 import java.math.BigDecimal
@@ -9,16 +9,20 @@ data class TaxInvoice(
     val commercialInvoiceNumber: String,
     val timestamp: LocalDateTime,
     val amount: BigDecimal,
-    val taxType: String // TODO enum
+    val taxType: TaxType
 ) {
     companion object {
+        private fun taxTypeToEnum(value: String): TaxType {
+            return TaxType.valueOf(value)
+        }
+
         fun csvRecordToTaxInvoice(csvRecord: CSVRecord): TaxInvoice {
             return TaxInvoice(
                 customerId = csvRecord[0].toInt(),
                 commercialInvoiceNumber = csvRecord[1],
                 timestamp = LocalDateTime.parse(csvRecord[2]),
                 amount = csvRecord[3].toBigDecimal(),
-                taxType = csvRecord[4]
+                taxType = taxTypeToEnum(csvRecord[4])
             )
         }
     }
