@@ -1,5 +1,7 @@
-package au.com.mir
+package au.com.mir.io
 
+import au.com.mir.io.IOException
+import au.com.mir.io.Parser
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.assertThrows
 import org.spekframework.spek2.Spek

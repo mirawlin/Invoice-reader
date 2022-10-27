@@ -1,5 +1,7 @@
-package au.com.mir
+package au.com.mir.engine
 
+import au.com.mir.TaxInvoice
+import au.com.mir.TaxType
 import org.junit.jupiter.api.Assertions.*
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
@@ -18,7 +20,7 @@ class TaxCalculatorTest: Spek({
               commercialInvoiceNumber = "InvoiceNumber/555",
               timestamp = LocalDateTime.of(2021,2,15,2,1,1),
               amount = BigDecimal.TEN,
-              taxType = "GST"
+              taxType = TaxType.GST
           )
 
           val invoice2 = TaxInvoice(
@@ -26,7 +28,7 @@ class TaxCalculatorTest: Spek({
               commercialInvoiceNumber = "InvoiceNumber/444",
               timestamp = LocalDateTime.of(2021,2,15,2,1,1),
               amount = BigDecimal.valueOf(50L),
-              taxType = "GST"
+              taxType = TaxType.GST
           )
 
           val listOfInvoices = listOf(invoice1, invoice2)
