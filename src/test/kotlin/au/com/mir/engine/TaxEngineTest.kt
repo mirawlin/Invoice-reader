@@ -1,4 +1,4 @@
-package au.com.mir
+package au.com.mir.engine
 
 import org.junit.jupiter.api.Assertions.*
 import org.spekframework.spek2.Spek
@@ -9,7 +9,7 @@ class TaxEngineTest: Spek({
         it("should take in an array of arguments and calculate the total tax") {
             // GIVEN
 
-            val expected = "For tax GST, customer 123 has declared \$6.000"
+            val expected = "For tax GST, customer 123 has declared \$6.00"
             // WHEN
             val result = TaxEngine.execute( 123, "GST", "./src/test/resources/short_sample.csv")
 
