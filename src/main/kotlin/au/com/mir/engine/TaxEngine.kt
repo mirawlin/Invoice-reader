@@ -1,7 +1,7 @@
 package au.com.mir.engine
 
 import au.com.mir.io.Parser
-import au.com.mir.TaxInvoice
+import au.com.mir.model.TaxInvoice
 
 object TaxEngine {
     fun execute(customer: Int, taxType: String, filePath: String): String {

@@ -1,6 +1,6 @@
 package au.com.mir.engine
 
-import au.com.mir.TaxInvoice
+import au.com.mir.model.TaxInvoice
 import java.math.BigDecimal
 
 object TaxCalculator {

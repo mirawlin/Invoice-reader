@@ -1,7 +1,7 @@
 package au.com.mir.engine
 
-import au.com.mir.TaxInvoice
-import au.com.mir.TaxType
+import au.com.mir.model.TaxInvoice
+import au.com.mir.model.TaxType
 import org.junit.jupiter.api.Assertions.*
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe

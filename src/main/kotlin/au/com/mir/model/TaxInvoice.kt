@@ -1,4 +1,4 @@
-package au.com.mir
+package au.com.mir.model
 
 import org.apache.commons.csv.CSVRecord
 import java.math.BigDecimal
