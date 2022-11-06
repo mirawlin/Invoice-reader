@@ -28,14 +28,14 @@ class ParserTest: Spek({
             assertEquals(4, result.size)
         }
 
-        it("should throw an Exception") {
+        it("should throw a File Not Found Exception") {
             // Given
             val currentRelativePath: Path = Paths.get("")
             val s = currentRelativePath.toAbsolutePath().toString()
             val filePath = "$s/src/test/resources/short_sample11.csv"
 
             // When
-            val result = assertThrows<IOException> {
+            val result = assertThrows<FileNotFoundException> {
                 Parser.readFile(filePath)
             }
 

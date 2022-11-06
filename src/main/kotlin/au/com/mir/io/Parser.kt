@@ -20,7 +20,7 @@ object Parser {
             return parser.records
         } catch (e: FileNotFoundException) {
             logger.log(Level.SEVERE, e.message)
-            throw IOException("Wrong file name")
+            throw au.com.mir.io.FileNotFoundException("Wrong file name")
         }
     }
 }
